@@ -1,6 +1,6 @@
 NAME		= push_swap
 
-FILES		= main utils init
+FILES		= main utils init list
 
 SRCS		= $(addprefix srcs/, $(addsuffix .c, $(FILES)))
 
