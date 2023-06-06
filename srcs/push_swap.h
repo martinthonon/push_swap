@@ -4,6 +4,8 @@
 # include <stdio.h>
 # include "../lib/libft/libft.h"
 
+# define ERROR "Error\n"
+
 typedef struct s_dllist_node 
 {
 	struct s_dllist_node *prev;
@@ -21,12 +23,11 @@ enum e_boolean {
 	true
 };
 
-int main(int argc, const char **argv);
-
-int ft_checker(const char **dptr);
-int ft_init(t_dllist *stack_a, const char **argv);
+int ft_checker(char **dptr);
+t_dllist *ft_init(char **dptr);
 
 t_dllist *ft_list_new();
+void ft_list_destroy(t_dllist *struct_sentinel);
 t_dllist_node *ft_list_add_back(t_dllist_node *sentinel, int content);
 
 #endif

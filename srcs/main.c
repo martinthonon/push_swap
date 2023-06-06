@@ -1,28 +1,31 @@
 #include "push_swap.h"
 
-int main(int argc, const char **argv)
+int main(int argc, char **argv)
 {
-	t_dllist stack_a;
-	t_dllist stack_b;
+	t_dllist *stack_a;
+	t_dllist *stack_b;
+	char **split;
 
-	printf("new_node  : %p\n", stack_a.sentinel_node);
-	if (argc > 1)
+	if (argc < 2)
 	{
-		if (ft_checker(argv) == true || ft_init(&stack_a, argv) == true)
+		write(2, ERROR, ft_strlen(ERROR));
+		return (1);
+	}
+	else if (argc == 2)
+	{
+		split = ft_split(argv[1], ' ');
+		if (ft_checker(split) == true)
 		{
-			ft_putstr_fd("Error\n", 1);
-			return(1);
+			write(2, ERROR, ft_strlen(ERROR));
+			ft_free(split);
+			return (1);
 		}
-		t_dllist_node *head = stack_a.sentinel_node;
-		printf("new_node  : %p\n", stack_a.sentinel_node);
-		head->val = 42;
-		head = head->prev;
-		while (head->val != 42) {
-			printf("w : %d\n", head->val);
-			head = head->prev;
+		stack_a = ft_init(split);
+		if (stack_a == NULL)
+		{
+			write(2, ERROR, ft_strlen(ERROR));
+			ft_free(split);
+			return (1);
 		}
 	}
-	else
-		ft_putstr_fd("Error\n", 1);
-	return (1);
 }
