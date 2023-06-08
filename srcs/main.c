@@ -1,31 +1,27 @@
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int main(int argc, char **argv)
 {
 	t_dllist *stack_a;
 	t_dllist *stack_b;
-	char **split;
 
 	if (argc < 2)
 	{
 		write(2, ERROR, ft_strlen(ERROR));
 		return (1);
 	}
-	else if (argc == 2)
+	if (argc == 2)
+		stack_a = ft_init(ft_split(argv[1], ' '));
+	else
+		stack_a = ft_init(++argv);
+	if (stack_a == NULL) 
 	{
-		split = ft_split(argv[1], ' ');
-		if (ft_checker(split) == true)
-		{
-			write(2, ERROR, ft_strlen(ERROR));
-			ft_free(split);
-			return (1);
-		}
-		stack_a = ft_init(split);
-		if (stack_a == NULL)
-		{
-			write(2, ERROR, ft_strlen(ERROR));
-			ft_free(split);
-			return (1);
-		}
+		write(2, ERROR, ft_strlen(ERROR));
+		return (1);
 	}
+	stack_b = NULL;
+	ft_sort(stack_a, stack_b);
+	ft_list_destroy(stack_a);
+	//ft_list_destroy(stack_b);
+	return (0);
 }

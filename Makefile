@@ -1,6 +1,12 @@
 NAME		= push_swap
 
-FILES		= main utils init list
+FILES		= main \
+				utils/utils \
+				init/init \
+				list/list_new \
+				list/list_add_back \
+				list/list_destroy \
+				sort/sort
 
 SRCS		= $(addprefix srcs/, $(addsuffix .c, $(FILES)))
 
@@ -10,7 +16,7 @@ LIBFT		= lib/libft/libft.a
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra
+CFLAGS		= -Wall -Wextra -Werror
 
 SANITIZE	= -fsanitize=address -g -O1 -fno-omit-frame-pointer
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mathonon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mathonon <mathonon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 12:49:30 by mathonon          #+#    #+#             */
-/*   Updated: 2022/10/26 12:49:33 by mathonon         ###   ########.fr       */
+/*   Updated: 2023/04/18 16:42:00 by mathonon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <fcntl.h>
 
 # define BUFFER_SIZE 42
 
@@ -53,10 +54,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n);
 void	ft_bzero(void *s, size_t n);
 
 // <stdlib.h>
-int		ft_atoi(const char *nptr);
+int		ft_atoi(char *nptr);
 void	*ft_calloc(size_t count, size_t n);
 
-char    *ft_get_next_line(int fd);
+char	*ft_get_next_line(int fd);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	**ft_split(const char *s, char c);
