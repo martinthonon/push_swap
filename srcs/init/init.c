@@ -10,7 +10,7 @@ t_dllist *ft_init(char **dptr)
 
     if (dptr == NULL)
         return (NULL);
-    else if (ft_checker(dptr) == true)
+    else if (ft_checker(dptr) != false)
         return (NULL);
     result =  ft_fill_list(dptr);
     return (result);

@@ -25,14 +25,18 @@ enum e_boolean
 	true
 };
 
+//sort
 void ft_sort(t_dllist *stack_a, t_dllist *stack_b);
 
+//init
 t_dllist *ft_init(char **dptr);
 
-
+//list
 t_dllist *ft_list_new();
 t_dllist_node *ft_list_add_back(t_dllist_node *sentinel, long content);
 void ft_list_destroy(t_dllist *struct_sentinel);
 
+//utils
 long	ft_atol(char *nptr);
+int ft_sorted(t_dllist_node *sentinel, t_dllist_node *sentinel_next);
 #endif

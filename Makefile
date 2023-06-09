@@ -1,7 +1,8 @@
 NAME		= push_swap
 
 FILES		= main \
-				utils/utils \
+				utils/atol \
+				utils/sorted \
 				init/init \
 				list/list_new \
 				list/list_add_back \

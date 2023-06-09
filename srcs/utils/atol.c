@@ -1,5 +1,4 @@
 #include "../../includes/push_swap.h"
-long	ft_atol(char *nptr);
 
 long	ft_atol(char *nptr)
 {
