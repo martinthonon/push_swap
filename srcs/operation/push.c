@@ -2,24 +2,37 @@
 
 void ft_pa(t_dllist *stack_a, t_dllist *stack_b);
 void ft_pb(t_dllist *stack_a, t_dllist *stack_b);
-static int ft_push(t_dllist_node *to_push, t_dllist_node *target);
+static void ft_push(t_dllist *to_push, t_dllist *target);
+
 
 void ft_pa(t_dllist *stack_a, t_dllist *stack_b)
 {
-    if (ft_push(stack_b->sentinel_node->next, stack_a->sentinel_node->next) != true)
-        write(1, "pa\n", 3);
+    ft_push(stack_b, stack_a);
+    write(1, "pa\n", 3);
 }
 
 void ft_pb(t_dllist *stack_a, t_dllist *stack_b)
 {
-    if (ft_push(stack_a->sentinel_node->next, stack_b->sentinel_node->next) != true)
-        write(1, "pb\n", 3);
+    ft_push(stack_a, stack_b);
+    write(1, "pb\n", 3);
 }
 
-static int ft_push(t_dllist_node *to_push, t_dllist_node *target)
+static void ft_push(t_dllist *to_push, t_dllist *target)
 {
-    if (to_push != to_push->next && target != target->next)
-    {
-        ft_list_add_back()
-    }
+    t_dllist_node *to_push_node;
+    t_dllist_node *target_node;
+    t_dllist_node *new_next_node;
+
+    to_push_node = to_push->sentinel_node->next;
+    target_node = target->sentinel_node;
+    new_next_node = to_push_node->next;
+
+    to_push_node->prev = target_node;
+    to_push_node->next = target_node->next;
+    to_push_node->next->prev = to_push_node;
+
+    target_node->next = to_push_node;
+
+    new_next_node->prev = to_push->sentinel_node;
+    to_push->sentinel_node->next = new_next_node;
 }

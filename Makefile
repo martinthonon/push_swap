@@ -6,6 +6,7 @@ FILES		= main \
 				init/init \
 				list/list_new \
 				list/list_add_back \
+				list/list_add_front \
 				list/list_destroy \
 				sort/sort
 

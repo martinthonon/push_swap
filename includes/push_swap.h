@@ -34,6 +34,7 @@ t_dllist *ft_init(char **dptr);
 //list
 t_dllist *ft_list_new();
 t_dllist_node *ft_list_add_back(t_dllist_node *sentinel, long content);
+t_dllist_node *ft_list_add_front(t_dllist_node *sentinel, long content);
 void ft_list_destroy(t_dllist *struct_sentinel);
 
 //utils
