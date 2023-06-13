@@ -19,17 +19,21 @@ void ft_sb(t_dllist *stack_b)
 
 void ft_ss(t_dllist *stack_a, t_dllist *stack_b)
 {
-    ft_sa(stack_a);
-    ft_sb(stack_b);
+    ft_swap(stack_a);
+    ft_swap(stack_b);
     write(1, "ss\n", 3);
 }
 
 static void ft_swap(t_dllist *swap)
 {
     t_dllist_node *sentinel_node;
-    long content_prev;
-    //swap content
+    long first_content;
 
+    sentinel_node = swap->sentinel_node;
+    first_content = sentinel_node->next->content;
+
+    sentinel_node->next->content = sentinel_node->next->next->content;
+    sentinel_node->next->next->content = first_content;
 }
 
     // t_dllist_node *sentinel_node;
