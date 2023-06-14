@@ -14,14 +14,14 @@ int main(int argc, char **argv)
 		stack_a = ft_init(ft_split(argv[1], ' '));
 	else
 		stack_a = ft_init(++argv);
-	if (stack_a == NULL) 
+	stack_b = ft_list_new();
+	if (stack_a == NULL || stack_b == NULL) 
 	{
 		write(2, ERROR, ft_strlen(ERROR));
 		return (1);
 	}
-	stack_b = NULL;
 	ft_sort(stack_a, stack_b);
 	ft_list_destroy(stack_a);
-	//ft_list_destroy(stack_b);
+	ft_list_destroy(stack_b);
 	return (0);
 }

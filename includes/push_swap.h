@@ -36,7 +36,7 @@ t_dllist *ft_list_new();
 t_dllist_node *ft_list_add_back(t_dllist_node *sentinel, long content);
 t_dllist_node *ft_list_add_front(t_dllist_node *sentinel, long content);
 void ft_list_destroy(t_dllist *struct_sentinel);
-
+int ft_list_empty(t_dllist_node *sentinel);
 //utils
 long	ft_atol(char *nptr);
 int ft_sorted(t_dllist_node *sentinel, t_dllist_node *sentinel_next);

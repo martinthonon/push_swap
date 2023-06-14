@@ -8,6 +8,7 @@ FILES		= main \
 				list/list_add_back \
 				list/list_add_front \
 				list/list_destroy \
+				list/list_empty \
 				operation/push \
 				operation/reverse_rotate \
 				operation/rotate \
