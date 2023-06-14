@@ -9,6 +9,7 @@ FILES		= main \
 				list/list_add_front \
 				list/list_destroy \
 				operation/push \
+				operation/reverse_rotate \
 				operation/rotate \
 				operation/swap \
 				sort/sort
