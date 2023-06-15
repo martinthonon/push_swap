@@ -41,6 +41,7 @@ static void ft_rotate(t_dllist *to_rotate)
     pivot_node->prev = to_rotate_node;
     pivot_node->next = new_next_node;
 
+    to_rotate_node->prev->next = to_rotate_node;
     new_next_node->prev = pivot_node;
 
 
