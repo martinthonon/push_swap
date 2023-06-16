@@ -6,7 +6,7 @@ BUILD_DIR:= build
 SRCS_DIR:= srcs
 
 SRCS_PUSH_SWAP:=	 main \
-				utils/atol \
+				utils/atoi_flow \
 				utils/sorted \
 				init/init \
 				list/list_new \

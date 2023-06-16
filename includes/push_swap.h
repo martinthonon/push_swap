@@ -53,8 +53,8 @@ void ft_rrr(t_dllist *stack_a, t_dllist *stack_b);
 void ft_sort(t_dllist *stack_a, t_dllist *stack_b);
 void ft_sorting(t_dllist *stack_a, t_dllist *stack_b);
 void ft_merge_sort(t_dllist *list);
-void ft_sort_small_list(t_dllist *list);
+void ft_sort_small_list(t_dllist *stack_a, t_dllist *stack_b);
 //utils
-long	ft_atol(char *nptr);
+int	ft_atoi_flow(char *nptr, int *is_overflow);
 int ft_sorted(t_dllist_node *sentinel, t_dllist_node *sentinel_next);
 #endif

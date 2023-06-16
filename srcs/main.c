@@ -17,6 +17,7 @@ int main(int argc, char **argv)
 	stack_b = ft_list_new();
 	if (stack_a == NULL || stack_b == NULL) 
 	{
+		printf("yikes\n");
 		write(2, ERROR, ft_strlen(ERROR));
 		return (1);
 	}

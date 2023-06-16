@@ -1,10 +1,9 @@
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
-long	ft_atol(char *nptr)
+int	ft_atoi_flow(char *nptr, int *is_overflow)
 {
-	char		op;
-	long long	tmp;
-	long long	res;
+	char				op;
+	long				res;
 
 	op = 1;
 	while ((*nptr >= '\t' && *nptr <= '\r') || *nptr == ' ')
@@ -18,10 +17,11 @@ long	ft_atol(char *nptr)
 	res = 0;
 	while (*nptr >= '0' && *nptr <= '9')
 	{
-		tmp = res;
 		res = res * 10 + *nptr - '0';
-		if (res < tmp)
-			return (-(op == 1));
+		if (res < INT_MIN || res > INT_MAX)
+		{
+			return (*is_overflow = true);
+		}
 		++nptr;
 	}
 	return (res * op);
