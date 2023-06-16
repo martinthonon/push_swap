@@ -1,4 +1,4 @@
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 t_dllist *ft_init(char **dptr);
 static int ft_checker(char **dptr);
@@ -57,16 +57,3 @@ static t_dllist *ft_fill_list(char **dptr)
     return (struct_sentinel);
 }      
 
-        // printf("new_node  : %p\n", new_node);
-        // printf("value     : %d\n", new_node->val);
-        // printf("prev_node : %p\n", new_node->prev);
-        // printf("next_node : %p\n\n", new_node->next);
-
-        // t_dllist_node *head = stack_a->sentinel_node;
-		// printf("node  : %p\n", stack_a);
-		// head->val = 42;
-		// head = head->prev;
-		// while (head->val != 42) {
-		// 	printf("y : %d\n", head->val);
-		// 	head = head->prev;
-		// }

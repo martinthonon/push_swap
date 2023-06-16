@@ -1,4 +1,4 @@
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 t_dllist_node *ft_list_add_front(t_dllist_node *sentinel, long content)
 {

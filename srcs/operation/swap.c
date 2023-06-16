@@ -35,27 +35,3 @@ static void ft_swap(t_dllist *swap)
     sentinel_node->next->content = sentinel_node->next->next->content;
     sentinel_node->next->next->content = first_content;
 }
-
-    // t_dllist_node *sentinel_node;
-    // t_dllist_node *swap_to_prev;
-    // t_dllist_node *swap_to_next;
-    // t_dllist_node *new_prev_node;
-    // t_dllist_node *new_next_node;
-
-    // sentinel_node = swap->sentinel_node;
-    // swap_to_prev = sentinel_node->next;
-    // swap_to_next = sentinel_node->prev;
-    // new_prev_node = swap_to_next->prev;
-    // new_next_node = swap_to_prev->next;
-
-    // sentinel_node->prev = swap_to_prev;
-    // sentinel_node->next = swap_to_next;
-
-    // swap_to_prev->prev = new_prev_node;
-    // swap_to_prev->next = sentinel_node;
-
-    // swap_to_next->prev = sentinel_node;
-    // swap_to_next->next = new_next_node;
-
-    // new_prev_node->next = swap_to_prev;
-    // new_next_node->prev = swap_to_next;

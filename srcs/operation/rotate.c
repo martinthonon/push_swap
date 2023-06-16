@@ -1,4 +1,4 @@
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 void ft_ra(t_dllist *stack_a);
 void ft_rb(t_dllist *stack_b);
@@ -43,6 +43,4 @@ static void ft_rotate(t_dllist *to_rotate)
 
     to_rotate_node->prev->next = to_rotate_node;
     new_next_node->prev = pivot_node;
-
-
 }
