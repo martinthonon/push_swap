@@ -1,6 +1,6 @@
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
-int ft_sorted(t_dllist_node *sentinel, t_dllist_node *sentinel_next)
+bool ft_sorted(t_dllist_node *sentinel, t_dllist_node *sentinel_next)
 {
     while (sentinel_next->next != sentinel)
     {

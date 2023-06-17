@@ -5,23 +5,24 @@ NAME:=	push_swap
 BUILD_DIR:= build
 SRCS_DIR:= srcs
 
-SRCS_PUSH_SWAP:=	 main \
-				utils/atoi_flow \
-				utils/sorted \
-				init/init \
-				list/list_new \
-				list/list_add_back \
-				list/list_add_front \
-				list/list_destroy \
-				list/list_empty \
-				operation/push \
-				operation/reverse_rotate \
-				operation/rotate \
-				operation/swap \
-				sort/sort \
-				sort/sort_small_list \
-				sort/merge_sort \
-				sort/sorting
+SRCS_PUSH_SWAP:=	main \
+					list/list_add_back \
+					list/list_add_front \
+					list/list_destroy \
+					list/list_empty \
+					list/list_new \
+					operation/push \
+					operation/reverse_rotate \
+					operation/rotate \
+					operation/swap \
+					sort/merge_sort \
+					sort/sort_small_list \
+					sort/sort \
+					sort/sorting
+					utils/atoi_flow \
+					utils/container_init \
+					utils/list_init \
+					utils/sorted
 
 SRCS:=	${addprefix ${SRCS_DIR}/, ${addsuffix .c, ${SRCS_PUSH_SWAP}}}
 

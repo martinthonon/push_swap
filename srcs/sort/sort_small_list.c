@@ -1,20 +1,15 @@
 #include "push_swap.h"
 
-void ft_sort_small_list(t_dllist *stack_a, t_dllist *stack_b){
+void ft_sort_small_list(t_dllist *stack_a){
 
-    t_dllist_node *sentinel;
-    t_dllist_node *node;
-    (void)stack_b;
-    sentinel = stack_a->sentinel_node;
-    node = sentinel->next;
-    while (node != sentinel) {
-        printf("prev : %d, next : %d \n", sentinel->prev->content, sentinel->next->content);
-        if (sentinel->prev->content < sentinel->next->content) {
-            ft_rra(stack_a);
-        }
-        else if (sentinel->next->content > sentinel->next->next->content) {
-            ft_sa(stack_a);
-        }
-        node = node->next;
-    }
+    (void)stack_a;
+    // int first;
+    // int middle;
+    // int last;
+
+    // first = stack_a->sentinel_node->next->content;
+    // middle = stack_a->sentinel_node->next->next->content;
+    // last = stack_a->sentinel_node->prev->content;
+
+
 }
