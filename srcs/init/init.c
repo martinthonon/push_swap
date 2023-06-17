@@ -3,22 +3,17 @@
 t_dllist *ft_init(char **dptr);
 static int ft_checker(char **dptr);
 static t_dllist *ft_fill_list(char **dptr);
-//static int ft_check_doubles(t_dllist *stack_content);
+static int ft_check_doubles(t_dllist *stack_content);
 
 t_dllist *ft_init(char **dptr)
 {
     t_dllist *stack_content;
 
-    if (dptr == NULL || ft_checker(dptr) == true) {
-        printf("yep\n");
+    if (dptr == NULL || ft_checker(dptr) == true)
         return (NULL);
-    }
     stack_content = ft_fill_list(dptr);
-    // if (ft_check_doubles(stack_content) == true) {
-    //     printf("yepp\n");
-    //     return (NULL);
-    // }
-        
+    if (ft_check_doubles(stack_content) == true)
+        return (NULL);      
     return (stack_content);
 }
 
@@ -41,7 +36,6 @@ static int ft_checker(char **dptr)
     while (dptr[++i] != NULL)
     {
         ft_atoi_flow(dptr[i], &boulean);
-        printf("%d\n", boulean);
         if (boulean == true)
             return (1);
     }
@@ -71,22 +65,24 @@ static t_dllist *ft_fill_list(char **dptr)
     return (struct_sentinel);
 }
 
-// static int ft_check_doubles(t_dllist *stack_content)
-// {
-//     t_dllist_node *sentinel_node;
-//     t_dllist_node *next_node;
+static int ft_check_doubles(t_dllist *stack_content)
+{
+    t_dllist_node *sentinel_node;
+    t_dllist_node *next_node;
+    t_dllist_node *tmp_node;
     
-//     sentinel_node = stack_content->sentinel_node;
-//     next_node = sentinel_node->next;
-//     while (next_node->next != sentinel_node)
-//     {
-//         sentinel_node->content = next_node->content;
-//         while (next_node->next->content != sentinel_node->content)
-//             next_node = next_node->next;
-//         if (next_node->next != sentinel_node)
-//             return (1);
-//         next_node = next_node->next;
-//     }
-//     return (0);
-// }
-
+    sentinel_node = stack_content->sentinel_node;
+    next_node = sentinel_node->next;
+    while (next_node != sentinel_node)
+    {
+        tmp_node = next_node->next;
+        while (tmp_node != sentinel_node)
+        {
+            if (tmp_node->content == next_node->content)
+                return (1);
+            tmp_node = tmp_node->next;
+        }
+        next_node = next_node->next;
+    }
+    return (0);
+}

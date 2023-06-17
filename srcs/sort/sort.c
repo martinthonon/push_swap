@@ -16,7 +16,6 @@ void ft_sort(t_dllist *stack_a, t_dllist *stack_b)
             printf("node : %p, content : %d \n", node, node->content);
         }
         printf("\n");
-        break;
     }
     printf("sorted\n");
 }

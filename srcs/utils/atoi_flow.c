@@ -18,7 +18,7 @@ int	ft_atoi_flow(char *nptr, int *is_overflow)
 	while (*nptr >= '0' && *nptr <= '9')
 	{
 		res = res * 10 + *nptr - '0';
-		if (res < INT_MIN || res > INT_MAX)
+		if (op * res < INT_MIN || op * res > INT_MAX)
 		{
 			return (*is_overflow = true);
 		}
