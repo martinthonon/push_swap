@@ -1,4 +1,5 @@
-#include "push_swap.h"
+//#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void ft_ra(t_dllist *stack_a);
 void ft_rb(t_dllist *stack_b);

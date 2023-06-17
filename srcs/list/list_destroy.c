@@ -1,4 +1,5 @@
-#include "push_swap.h"
+//#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void ft_list_destroy(t_dllist *struct_sentinel)
 {

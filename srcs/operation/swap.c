@@ -1,4 +1,5 @@
-#include "push_swap.h"
+//#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void ft_sa(t_dllist *stack_a);
 void ft_sb(t_dllist *stack_b);
@@ -27,7 +28,7 @@ void ft_ss(t_dllist *stack_a, t_dllist *stack_b)
 static void ft_swap(t_dllist *swap)
 {
     t_dllist_node *sentinel_node;
-    long first_content;
+    int first_content;
 
     sentinel_node = swap->sentinel_node;
     first_content = sentinel_node->next->content;

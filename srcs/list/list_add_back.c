@@ -1,6 +1,7 @@
-#include "push_swap.h"
+//#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
-t_dllist_node *ft_list_add_back(t_dllist_node *sentinel_node, long content)
+t_dllist_node *ft_list_add_back(t_dllist_node *sentinel_node, int content)
 {
     t_dllist_node *new_node;
     t_dllist_node *prev_node;

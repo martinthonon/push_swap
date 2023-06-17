@@ -1,4 +1,5 @@
-#include "push_swap.h"
+//#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 int	ft_atoi_flow(char *nptr, int *is_overflow)
 {
@@ -15,7 +16,7 @@ int	ft_atoi_flow(char *nptr, int *is_overflow)
 		++nptr;
 	}
 	res = 0;
-	while (*nptr >= '0' && *nptr <= '9')
+	while (ft_isdigit(*nptr) == true)
 	{
 		res = res * 10 + *nptr - '0';
 		if (op * res < INT_MIN || op * res > INT_MAX)
@@ -24,5 +25,5 @@ int	ft_atoi_flow(char *nptr, int *is_overflow)
 		}
 		++nptr;
 	}
-	return (res * op);
+	return ((int)res * op);
 }

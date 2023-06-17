@@ -1,4 +1,5 @@
-#include "push_swap.h"
+//#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_dllist *ft_list_new()
 {

@@ -1,11 +1,74 @@
-.DELETE_ON_ERROR:
+# .DELETE_ON_ERROR:
 
-NAME:= push_swap
+# NAME:= push_swap
 
-BUILD_DIR:= build
-SRCS_DIR:= srcs
+# BUILD_DIR:= build
+# SRCS_DIR:= srcs
 
-SRCS_PUSH_SWAP:= main \
+# SRCS_PUSH_SWAP:= main \
+# 				init/container_init \
+# 				init/list_init \
+# 				list/list_add_back \
+# 				list/list_destroy \
+# 				list/list_new \
+# 				operation/push \
+# 				operation/reverse_rotate \
+# 				operation/rotate \
+# 				operation/swap \
+# 				sort/merge_sort \
+# 				sort/sort \
+# 				sort/sorting \
+# 				utils/atoi_flow \
+# 				utils/is_empty \
+# 				utils/is_sorted \
+
+# SRCS:=	${addprefix ${SRCS_DIR}/, ${addsuffix .c, ${SRCS_PUSH_SWAP}}}
+
+# OBJS:=	${SRCS:%.c=${BUILD_DIR}/%.o}
+
+# DEPS:=	${OBJS:.o=.d}
+
+# LIBFT:=	libs/libft/libft.a
+# CFLAGS:= -Wall -Wextra -Werror -Wuninitialized -Winit-self -Wshadow -Wdouble-promotion -Wundef -fno-common -Wconversion -Os -g3 -O3 -fsanitize=address -g3 -O3 -fno-omit-frame-pointer
+
+# INC_DIRS:= includes libs/libft
+
+# CPPFLAGS:= ${addprefix -I,${INC_DIRS}} -MMD -MP
+
+# LIB_DIR:= libs/libft
+# LDFLAGS:= ${addprefix -L,${LIB_DIR}}
+# LDLIBS:= -lft
+
+# RM:=	rm -rf
+
+# all: ${NAME}
+
+# ${NAME}: ${OBJS} ${LIBFT}
+# 	${CC} ${LDFLAGS} ${OBJS} ${LDLIBS} -o $@
+
+# ${LIBFT}:
+# 	${MAKE} -C ${dir ${LIBFT}}
+
+# ${BUILD_DIR}/%.o: %.c
+# 	mkdir -p $(dir $@)
+# 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+# clean:
+# 	${MAKE} clean -C ${dir ${LIBFT}}
+# 	${RM} ${BUILD_DIR}
+
+# fclean: clean
+# 	${RM} ${LIBFT}
+# 	${RM} ${NAME}
+
+# re: fclean all
+
+# .PHONY:	all clean fclean re
+
+# -include ${DEPS}
+NAME		= push_swap
+
+FILES		= main \
 				init/container_init \
 				init/list_init \
 				list/list_add_back \
@@ -22,47 +85,36 @@ SRCS_PUSH_SWAP:= main \
 				utils/is_empty \
 				utils/is_sorted \
 
-SRCS:=	${addprefix ${SRCS_DIR}/, ${addsuffix .c, ${SRCS_PUSH_SWAP}}}
+SRCS		= $(addprefix srcs/, $(addsuffix .c, $(FILES)))
 
-OBJS:=	${SRCS:%.c=${BUILD_DIR}/%.o}
+OBJS		= ${SRCS:.c=.o}
 
-DEPS:=	${OBJS:.o=.d}
+LIBFT		= libs/libft/libft.a
 
-LIBFT:=	libs/libft/libft.a
-CFLAGS:= -Wall -Wextra -Werror
+CC			= gcc
 
-INC_DIRS:= includes libs/libft
+CFLAGS		= -Wall -Wextra -Werror -Wuninitialized -Winit-self -Wshadow -Wdouble-promotion -Wundef -fno-common -Wconversion -Os -g3 -O3
 
-CPPFLAGS:= ${addprefix -I,${INC_DIRS}} -MMD -MP
+SANITIZE	= -fsanitize=address -g -O1 -fno-omit-frame-pointer
 
-LIB_DIR:= libs/libft
-LDFLAGS:= ${addprefix -L,${LIB_DIR}}
-LDLIBS:= -lft
+RM			= rm -f
 
-RM:=	rm -rf
+.c.o :
+			$(CC) $(CFLAGS) $(SANITIZE) -c $< -o $@
 
-all: ${NAME}
+$(NAME): $(OBJS_DIR) $(OBJS)
+			make bonus -C libs/libft
+			$(CC) $(CFLAGS) $(SANITIZE) $(OBJS) -o $(NAME) $(LIBFT)
 
-${NAME}: ${OBJS} ${LIBFT}
-	${CC} ${LDFLAGS} ${OBJS} ${LDLIBS} -o $@
-
-${LIBFT}:
-	${MAKE} -C ${dir ${LIBFT}}
-
-${BUILD_DIR}/%.o: %.c
-	mkdir -p $(dir $@)
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+all : $(NAME)
 
 clean:
-	${MAKE} clean -C ${dir ${LIBFT}}
-	${RM} ${BUILD_DIR}
+			make fclean -C libs/libft
+			rm -f $(OBJS)
 
 fclean: clean
-	${RM} ${LIBFT}
-	${RM} ${NAME}
+			$(RM) $(NAME)
 
-re: fclean all
+re:	fclean all
 
 .PHONY:	all clean fclean re
-
--include ${DEPS}

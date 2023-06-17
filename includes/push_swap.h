@@ -3,7 +3,7 @@
 
 # include <stdio.h>
 # include <stdbool.h>
-# include "libft.h"
+# include "../libs/libft/libft.h"
 
 # define ERROR "Error\n"
 
@@ -21,11 +21,11 @@ typedef struct s_dllist
 }				t_dllist;
 
 //init
-bool ft_container_init(t_dllist_node **stack_a, t_dllist_node **stack_b);
-bool *ft_list_init(char **dptr);
+bool ft_container_init(t_dllist **stack_a, t_dllist **stack_b);
+bool ft_list_init(char **dptr, t_dllist_node *sentinel_node);
 //list
 t_dllist *ft_list_new();
-t_dllist_node *ft_list_add_back(t_dllist_node *sentinel, long content);
+t_dllist_node *ft_list_add_back(t_dllist_node *sentinel, int content);
 void ft_list_destroy(t_dllist *struct_sentinel);
 
 //operation
