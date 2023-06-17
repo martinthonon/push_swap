@@ -21,13 +21,13 @@ typedef struct s_dllist
 }				t_dllist;
 
 //init
-t_dllist *ft_init(char **dptr);
+bool ft_container_init(t_dllist_node **stack_a, t_dllist_node **stack_b);
+bool *ft_list_init(char **dptr);
 //list
 t_dllist *ft_list_new();
 t_dllist_node *ft_list_add_back(t_dllist_node *sentinel, long content);
-t_dllist_node *ft_list_add_front(t_dllist_node *sentinel, long content);
 void ft_list_destroy(t_dllist *struct_sentinel);
-bool ft_list_empty(t_dllist_node *sentinel);
+
 //operation
 void ft_pa(t_dllist *stack_a, t_dllist *stack_b);
 void ft_pb(t_dllist *stack_a, t_dllist *stack_b);
@@ -43,15 +43,12 @@ void ft_rr(t_dllist *stack_a, t_dllist *stack_b);
 void ft_rra(t_dllist *stack_a);
 void ft_rrb(t_dllist *stack_b);
 void ft_rrr(t_dllist *stack_a, t_dllist *stack_b);
-
 //sort
 void ft_sort(t_dllist *stack_a, t_dllist *stack_b);
 void ft_sorting(t_dllist *stack_a, t_dllist *stack_b);
 void ft_merge_sort(t_dllist *list);
-void ft_sort_small_list(t_dllist *stack_a);
 //utils
 int	ft_atoi_flow(char *nptr, int *is_overflow);
-bool ft_container_init(t_dllist_node **stack_a, t_dllist_node **stack_b);
-bool ft_sorted(t_dllist_node *sentinel, t_dllist_node *sentinel_next);
-t_dllist *ft_list_init(char **dptr);
+bool ft_is_empty(t_dllist_node *sentinel);
+bool ft_is_sorted(t_dllist_node *sentinel, t_dllist_node *sentinel_next);
 #endif

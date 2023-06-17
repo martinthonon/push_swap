@@ -1,28 +1,26 @@
 .DELETE_ON_ERROR:
 
-NAME:=	push_swap
+NAME:= push_swap
 
 BUILD_DIR:= build
 SRCS_DIR:= srcs
 
-SRCS_PUSH_SWAP:=	main \
-					list/list_add_back \
-					list/list_add_front \
-					list/list_destroy \
-					list/list_empty \
-					list/list_new \
-					operation/push \
-					operation/reverse_rotate \
-					operation/rotate \
-					operation/swap \
-					sort/merge_sort \
-					sort/sort_small_list \
-					sort/sort \
-					sort/sorting
-					utils/atoi_flow \
-					utils/container_init \
-					utils/list_init \
-					utils/sorted
+SRCS_PUSH_SWAP:= main \
+				init/container_init \
+				init/list_init \
+				list/list_add_back \
+				list/list_destroy \
+				list/list_new \
+				operation/push \
+				operation/reverse_rotate \
+				operation/rotate \
+				operation/swap \
+				sort/merge_sort \
+				sort/sort \
+				sort/sorting \
+				utils/atoi_flow \
+				utils/is_empty \
+				utils/is_sorted \
 
 SRCS:=	${addprefix ${SRCS_DIR}/, ${addsuffix .c, ${SRCS_PUSH_SWAP}}}
 
