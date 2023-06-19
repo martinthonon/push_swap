@@ -1,5 +1,4 @@
-//#include "push_swap.h"
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 void ft_sorting(t_dllist *stack_a, t_dllist *stack_b)
 {

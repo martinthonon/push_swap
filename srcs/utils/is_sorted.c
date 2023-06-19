@@ -1,5 +1,4 @@
-//#include "push_swap.h"
-#include "../../includes/push_swap.h"
+#include "push_swap.h"
 
 bool ft_is_sorted(t_dllist_node *sentinel, t_dllist_node *sentinel_next)
 {

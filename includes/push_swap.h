@@ -3,7 +3,7 @@
 
 # include <stdio.h>
 # include <stdbool.h>
-# include "../libs/libft/libft.h"
+# include "libft.h"
 
 # define ERROR "Error\n"
 
