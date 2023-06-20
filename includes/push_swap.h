@@ -45,8 +45,6 @@ void ft_rrb(t_dllist *stack_b);
 void ft_rrr(t_dllist *stack_a, t_dllist *stack_b);
 //sort
 void ft_sort(t_dllist *stack_a, t_dllist *stack_b);
-void ft_sorting(t_dllist *stack_a, t_dllist *stack_b);
-void ft_merge_sort(t_dllist *list);
 //utils
 int	ft_atoi_flow(char *nptr, int *is_overflow);
 bool ft_is_empty(t_dllist_node *sentinel);

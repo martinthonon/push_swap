@@ -15,4 +15,3 @@ bool ft_container_init(t_dllist **stack_a, t_dllist **stack_b)
     }
     return (0);
 }
-

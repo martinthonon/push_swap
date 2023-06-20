@@ -15,9 +15,7 @@ SRCS_PUSH_SWAP:= main \
 				operation/reverse_rotate \
 				operation/rotate \
 				operation/swap \
-				sort/merge_sort \
 				sort/sort \
-				sort/sorting \
 				utils/atoi_flow \
 				utils/is_empty \
 				utils/is_sorted

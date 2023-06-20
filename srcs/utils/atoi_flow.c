@@ -19,11 +19,7 @@ int	ft_atoi_flow(char *nptr, int *is_overflow)
 	{
 		res = res * 10 + *nptr - '0';
 		if (op * res < INT_MIN || op * res > INT_MAX)
-		{
-			printf("wtf\n");
 			return (*is_overflow = true);
-		}
-		printf("wtf1\n");
 		++nptr;
 	}
 	if (*nptr != '\0')
