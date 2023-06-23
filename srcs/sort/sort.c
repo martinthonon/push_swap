@@ -1,32 +1,47 @@
 #include "push_swap.h"
 
 void ft_sort(t_dllist *stack_a, t_dllist *stack_b);
-
+static void ft_sort_three(t_dllist *stack_a);
+static void ft_sort_five(t_dllist *stack_a, t_dllist *stack_b);
 static void ft_radix_sort(t_dllist *stack_a, t_dllist *stack_b, uint8_t byte_shift);
 
 void ft_sort(t_dllist *stack_a, t_dllist *stack_b)
 {
+    t_dllist_node *sentinel_node_a;
+    t_dllist_node *sentinel_node_b;
     uint8_t byte_shift;
-    int i;
 
-    i = 0;
+    sentinel_node_a = stack_a->sentinel_node;
+    sentinel_node_b = stack_b->sentinel_node;
     byte_shift = 0;
-    while (byte_shift <= 32 && (ft_is_empty(stack_b->sentinel_node) == false || ft_is_sorted(stack_a->sentinel_node, stack_a->sentinel_node->next) == false))
+    while (byte_shift < 32 && (ft_is_empty(sentinel_node_b) == false || ft_is_sorted(sentinel_node_a, sentinel_node_a->next) == false))
     {
-        ft_radix_sort(stack_a, stack_b, byte_shift++);
-        printf("byte shift : %d\n", byte_shift);
-        ++i;
-
+        if (stack_a->size <= 3)
+            ft_sort_three(stack_a);
+        else if (stack_a->size == 5)
+            ft_sort_five(stack_a, stack_b);
+        else
+            ft_radix_sort(stack_a, stack_b, byte_shift++);
     }
-    if (byte_shift > 32)
+    if (byte_shift > 31)
         exit(EXIT_FAILURE);
-    printf("sorted in %d\n", i);
+}
+
+static void ft_sort_three(t_dllist *stack_a)
+{
+
+}
+
+static void ft_sort_five(t_dllist *stack_a, t_dllist *stack_b)
+{
+
 }
 
 static void ft_radix_sort(t_dllist *stack_a, t_dllist *stack_b, uint8_t byte_shift)
 {
     t_dllist_node *first_node;
     int i;
+
     first_node = stack_a->sentinel_node->next;
     i = -1;
     while (++i < stack_a->size)

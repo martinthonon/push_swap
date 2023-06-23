@@ -1,6 +1,15 @@
 #include "push_swap.h"
 
-void ft_list_destroy(t_dllist *struct_sentinel)
+void ft_list_destroy(t_dllist *stack_a, t_dllist *stack_b);
+void ft_list_clear(t_dllist *struct_sentinel);
+
+void ft_list_destroy(t_dllist *stack_a, t_dllist *stack_b)
+{
+    ft_list_clear(stack_a);
+    ft_list_clear(stack_b);
+}
+
+void ft_list_clear(t_dllist *struct_sentinel)
 {
     t_dllist_node *sentinel_node_cpy;
     t_dllist_node *node_tmp;

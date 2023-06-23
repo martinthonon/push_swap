@@ -22,12 +22,12 @@ typedef struct s_dllist
 
 //init
 bool ft_container_init(t_dllist **stack_a, t_dllist **stack_b);
-bool ft_list_init(char **dptr, t_dllist *stack_a);
+bool ft_list_init(char **dptr, t_dllist *struct_sentinel);
 //list
-t_dllist *ft_list_new();
 t_dllist_node *ft_list_add_back(t_dllist_node *sentinel, int content);
-void ft_list_destroy(t_dllist *struct_sentinel);
-
+void ft_list_destroy(t_dllist *struct_sentinel_a, t_dllist *struct_sentinel_b);
+void ft_list_clear(t_dllist *struct_sentinel);
+t_dllist *ft_list_new();
 //operation
 void ft_pa(t_dllist *stack_a, t_dllist *stack_b);
 void ft_pb(t_dllist *stack_a, t_dllist *stack_b);

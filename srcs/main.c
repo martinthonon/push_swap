@@ -15,10 +15,10 @@ int main(int argc, char **argv)
 	if (init_status == true)
 	{
 		write(1, ERROR, 6);
+		ft_list_destroy(stack_a, stack_b);
 		return (1);
 	}
 	ft_sort(stack_a, stack_b);
-	ft_list_destroy(stack_a);
-	ft_list_destroy(stack_b);
+	ft_list_destroy(stack_a, stack_b);
 	return (0);
 }
