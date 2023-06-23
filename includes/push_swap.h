@@ -22,7 +22,7 @@ typedef struct s_dllist
 
 //init
 bool ft_container_init(t_dllist **stack_a, t_dllist **stack_b);
-bool ft_list_init(char **dptr, t_dllist_node *sentinel_node);
+bool ft_list_init(char **dptr, t_dllist *stack_a);
 //list
 t_dllist *ft_list_new();
 t_dllist_node *ft_list_add_back(t_dllist_node *sentinel, int content);
