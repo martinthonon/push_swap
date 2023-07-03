@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mathonon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mathonon <mathonon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 15:49:30 by mathonon          #+#    #+#             */
-/*   Updated: 2023/07/03 15:51:47 by mathonon         ###   ########.fr       */
+/*   Updated: 2023/07/03 18:30:35 by mathonon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	main(int argc, char **argv)
 	if (argc < 2 || ft_container_init(&stack_a, &stack_b) == true)
 		return (1);
 	if (argc == 2)
-		init_status = ft_list_init(ft_split(argv[1], ' '), stack_a);
+		init_status = ft_list_init(ft_split(argv[1], ' '), stack_a, true);
 	else
-		init_status = ft_list_init(++argv, stack_a);
+		init_status = ft_list_init(++argv, stack_a, false);
 	if (init_status == true)
 	{
 		write(1, ERROR, 6);

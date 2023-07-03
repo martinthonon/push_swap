@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   atoi_flow.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mathonon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mathonon <mathonon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:33:46 by mathonon          #+#    #+#             */
-/*   Updated: 2023/07/03 16:34:16 by mathonon         ###   ########.fr       */
+/*   Updated: 2023/07/03 18:35:34 by mathonon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi_flow(char *nptr, int *is_overflow)
+int	ft_atoi_flow(char *nptr, bool *is_overflow);
+
+int	ft_atoi_flow(char *nptr, bool *is_overflow)
 {
 	char				op;
 	long				res;

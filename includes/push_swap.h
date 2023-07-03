@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mathonon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mathonon <mathonon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 15:33:43 by mathonon          #+#    #+#             */
-/*   Updated: 2023/07/03 15:47:57 by mathonon         ###   ########.fr       */
+/*   Updated: 2023/07/03 18:38:01 by mathonon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <stdbool.h>
+# include <stdarg.h>
 # include "libft.h"
 
 # define ERROR "Error\n"
@@ -34,7 +35,8 @@ typedef struct s_dllist
 
 //init
 bool			ft_container_init(t_dllist **stack_a, t_dllist **stack_b);
-bool			ft_list_init(char **dptr, t_dllist *struct_sentinel);
+bool			ft_list_init(char **dptr, t_dllist *struct_sentinel,
+					bool split);
 //list
 t_dllist		*ft_list_new(void);
 t_dllist_node	*ft_list_add_back(t_dllist_node *sentinel, int content);
@@ -60,7 +62,8 @@ void			ft_rrr(t_dllist *stack_a, t_dllist *stack_b);
 //sort
 void			ft_sort(t_dllist *stack_a, t_dllist *stack_b);
 //utils
-int				ft_atoi_flow(char *nptr, int *is_overflow);
+int				ft_free(const char *formats, ...);
+int				ft_atoi_flow(char *nptr, bool *is_overflow);
 int				ft_max_val(t_dllist *stack);
 int				ft_min_val(t_dllist *stack);
 bool			ft_is_empty(t_dllist_node *sentinel);

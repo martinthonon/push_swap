@@ -18,6 +18,7 @@ SRCS_PUSH_SWAP:= main \
 				operation/swap \
 				sort/sort \
 				utils/atoi_flow \
+				utils/free \
 				utils/is_empty \
 				utils/is_sorted \
 				utils/min_max

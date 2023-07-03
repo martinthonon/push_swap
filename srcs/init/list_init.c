@@ -6,26 +6,27 @@
 /*   By: mathonon <mathonon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 15:53:23 by mathonon          #+#    #+#             */
-/*   Updated: 2023/07/03 17:13:09 by mathonon         ###   ########.fr       */
+/*   Updated: 2023/07/03 18:32:16 by mathonon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool		ft_list_init(char **dptr, t_dllist *struct_sentinel);
+bool		ft_list_init(char **dptr, t_dllist *struct_sentinel, bool split);
 static bool	ft_check_doubles(t_dllist_node *sentinel_node, int to_find);
 
-bool	ft_list_init(char **dptr, t_dllist *struct_sentinel)
+bool	ft_list_init(char **dptr, t_dllist *struct_sentinel, bool split)
 {
 	t_dllist_node	*sentinel_node;
 	int				i;
 	int				content;
-	int				is_overflow;
+	bool			is_overflow;
 
 	if (dptr == NULL)
 		return (1);
 	sentinel_node = struct_sentinel->sentinel_node;
 	i = -1;
+	is_overflow = false;
 	while (dptr[++i] != NULL)
 	{
 		content = ft_atoi_flow(dptr[i], &is_overflow);
@@ -35,6 +36,8 @@ bool	ft_list_init(char **dptr, t_dllist *struct_sentinel)
 			return (true);
 		++struct_sentinel->size;
 	}
+	if (split == true)
+		ft_free("%P", dptr);
 	return (false);
 }
 
