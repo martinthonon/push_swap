@@ -22,6 +22,7 @@ void ft_sort(t_dllist *stack_a, t_dllist *stack_b)
             ft_sort_five(stack_a, stack_b);
         else
             ft_radix_sort(stack_a, stack_b, byte_shift++);
+        break;
     }
     if (byte_shift > 31)
         exit(EXIT_FAILURE);
@@ -29,12 +30,36 @@ void ft_sort(t_dllist *stack_a, t_dllist *stack_b)
 
 static void ft_sort_three(t_dllist *stack_a)
 {
+    int first;
+    int middle;
+    int last;
 
+    first = stack_a->sentinel_node->next->content;
+    middle = stack_a->sentinel_node->next->next->content;
+    last = stack_a->sentinel_node->prev->content;
+
+    if (first > middle && middle < last && last > first)
+        ft_sa(stack_a);
+    if (first > middle && middle > last && last < first)
+    {
+       ft_sa(stack_a);
+       ft_rra(stack_a); 
+    } 
+    if (first > middle && middle < last && last < first)
+        ft_ra(stack_a);
+    if (first < middle && middle > last && last > first)
+    {
+       ft_sa(stack_a);
+       ft_ra(stack_a); 
+    }
+    if (first < middle && middle > last && last < first)
+       ft_rra(stack_a);
 }
 
 static void ft_sort_five(t_dllist *stack_a, t_dllist *stack_b)
 {
-
+    (void)stack_a;
+    (void)stack_b;
 }
 
 static void ft_radix_sort(t_dllist *stack_a, t_dllist *stack_b, uint8_t byte_shift)

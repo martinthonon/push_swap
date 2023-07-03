@@ -20,5 +20,6 @@ int main(int argc, char **argv)
 	}
 	ft_sort(stack_a, stack_b);
 	ft_list_destroy(stack_a, stack_b);
+	system("leaks push_swap");
 	return (0);
 }

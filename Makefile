@@ -18,7 +18,8 @@ SRCS_PUSH_SWAP:= main \
 				sort/sort \
 				utils/atoi_flow \
 				utils/is_empty \
-				utils/is_sorted
+				utils/is_sorted \
+				utils/min_max
 
 SRCS:=	${addprefix ${SRCS_DIR}/, ${addsuffix .c, ${SRCS_PUSH_SWAP}}}
 
