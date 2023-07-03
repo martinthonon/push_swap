@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   list_size.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mathonon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/03 16:34:59 by mathonon          #+#    #+#             */
-/*   Updated: 2023/07/03 16:35:42 by mathonon         ###   ########.fr       */
+/*   Created: 2023/07/03 16:09:00 by mathonon          #+#    #+#             */
+/*   Updated: 2023/07/03 16:10:03 by mathonon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-bool	ft_is_sorted(t_dllist_node *sentinel, t_dllist_node *sentinel_next)
+size_t	ft_list_size(t_dllist *struct_sentinel);
+
+size_t	ft_list_size(t_dllist *struct_sentinel)
 {
-	while (sentinel_next->next != sentinel)
+	t_dllist_node	*first_node;
+	size_t			i;
+
+	first_node = struct_sentinel->sentinel_node->next;
+	i = 0;
+	while (first_node != struct_sentinel->sentinel_node)
 	{
-		if (sentinel_next->content > sentinel_next->next->content)
-			return (false);
-		sentinel_next = sentinel_next->next;
+		first_node = first_node->next;
+		++i;
 	}
-	return (true);
+	return (i);
 }

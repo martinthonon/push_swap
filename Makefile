@@ -11,6 +11,7 @@ SRCS_PUSH_SWAP:= main \
 				list/list_add_back \
 				list/list_destroy \
 				list/list_new \
+				list/list_size \
 				operation/push \
 				operation/reverse_rotate \
 				operation/rotate \
@@ -19,6 +20,7 @@ SRCS_PUSH_SWAP:= main \
 				utils/atoi_flow \
 				utils/is_empty \
 				utils/is_sorted \
+				utils/min_max
 
 SRCS:=	${addprefix ${SRCS_DIR}/, ${addsuffix .c, ${SRCS_PUSH_SWAP}}}
 
@@ -27,7 +29,7 @@ OBJS:=	${SRCS:%.c=${BUILD_DIR}/%.o}
 DEPS:=	${OBJS:.o=.d}
 
 LIBFT:=	libs/libft/libft.a
-CFLAGS:= -Wall -Wextra -Werror -Wuninitialized -Winit-self -Wshadow -Wdouble-promotion -Wundef -fno-common -Wconversion -Os -g3 -O3 -fsanitize=address -g3 -O3 -fno-omit-frame-pointer
+CFLAGS:= -Wall -Wextra -Werror
 
 INC_DIRS:= includes libs/libft
 
@@ -42,7 +44,7 @@ RM:=	rm -rf
 all: ${NAME}
 
 ${NAME}: ${OBJS} ${LIBFT}
-	${CC} ${LDFLAGS} -fsanitize=address -g3 -O3 -fno-omit-frame-pointer ${OBJS} ${LDLIBS} -o $@
+	${CC} ${LDFLAGS} ${OBJS} ${LDLIBS} -o $@
 
 ${LIBFT}:
 	${MAKE} -C ${dir ${LIBFT}}

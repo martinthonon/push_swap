@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mathonon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/03 15:49:30 by mathonon          #+#    #+#             */
+/*   Updated: 2023/07/03 15:51:47 by mathonon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_dllist *stack_a;
-	t_dllist *stack_b;
-	bool init_status;
+	t_dllist	*stack_a;
+	t_dllist	*stack_b;
+	bool		init_status;
 
 	if (argc < 2 || ft_container_init(&stack_a, &stack_b) == true)
 		return (1);
@@ -20,6 +32,5 @@ int main(int argc, char **argv)
 	}
 	ft_sort(stack_a, stack_b);
 	ft_list_destroy(stack_a, stack_b);
-	system("leaks push_swap");
 	return (0);
 }
