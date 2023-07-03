@@ -49,6 +49,4 @@ void ft_sort(t_dllist *stack_a, t_dllist *stack_b);
 int	ft_atoi_flow(char *nptr, int *is_overflow);
 bool ft_is_empty(t_dllist_node *sentinel);
 bool ft_is_sorted(t_dllist_node *sentinel, t_dllist_node *sentinel_next);
-int ft_get_max_val(t_dllist *stack_a);
-int ft_get_min_val(t_dllist *stack_a);
 #endif
