@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 		init_status = ft_list_init(++argv, stack_a, false);
 	if (init_status == true)
 	{
-		write(1, ERROR, 6);
+		write(2, ERROR, 6);
 		ft_list_destroy(stack_a, stack_b);
 		return (1);
 	}
