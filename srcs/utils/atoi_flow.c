@@ -36,7 +36,7 @@ int	ft_atoi_flow(char *nptr, bool *is_overflow)
 			return (*is_overflow = true);
 		++nptr;
 	}
-	if (*nptr != '\0')
+	if (ft_isdigit(*(--nptr)) == false || *(++nptr) != '\0')
 		return (*is_overflow = true);
 	return ((int)res * op);
 }
