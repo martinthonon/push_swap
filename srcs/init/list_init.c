@@ -6,7 +6,7 @@
 /*   By: mathonon <mathonon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 15:53:23 by mathonon          #+#    #+#             */
-/*   Updated: 2023/07/03 18:32:16 by mathonon         ###   ########.fr       */
+/*   Updated: 2023/07/04 10:05:34 by mathonon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ bool	ft_list_init(char **dptr, t_dllist *struct_sentinel, bool split)
 	bool			is_overflow;
 
 	if (dptr == NULL)
-		return (1);
+		return (true);
 	sentinel_node = struct_sentinel->sentinel_node;
 	i = -1;
 	is_overflow = false;
